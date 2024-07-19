@@ -8,7 +8,9 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "json-server -p3001 --watch db.json",
-    "start-prod": "node app.js"
+    "start-prod": "node app.js",
+    "test:e2e": "cypress run",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
@@ -25,7 +27,9 @@
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.8",
     "@vitejs/plugin-react": "^4.0.3",
+    "cypress": "^13.13.1",
     "eslint": "^8.45.0",
+    "eslint-plugin-cypress": "^3.3.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",

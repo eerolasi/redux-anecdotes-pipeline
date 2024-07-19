@@ -8,9 +8,11 @@ const middlewares = jsonServer.defaults({
 })
 
 const port = process.env.PORT || 3001
+
 app.get('/health', (req, res) => {
   res.send('ok')
 })
+
 app.use(middlewares)
 app.use(router)
 

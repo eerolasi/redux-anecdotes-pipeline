@@ -8,14 +8,13 @@ const middlewares = jsonServer.defaults({
 })
 
 const port = process.env.PORT || 3001
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
 app.use(middlewares)
 app.use(router)
 
 app.listen(port, () => {
   /* eslint-disable no-console */
   console.log(`Server is running on ${port}`)
-})
-
-app.get('/health', (req, res) => {
-  res.send('ok')
 })

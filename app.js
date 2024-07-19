@@ -1,17 +1,21 @@
 const jsonServer = require('json-server')
 const path = require('path')
 
-const server = jsonServer.create()
+const app = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults({
   static: path.join(__dirname, 'dist'),
 })
 
 const port = process.env.PORT || 3001
-server.use(middlewares)
-server.use(router)
+app.use(middlewares)
+app.use(router)
 
-server.listen(port, () => {
+app.listen(port, () => {
   /* eslint-disable no-console */
   console.log(`Server is running on ${port}`)
+})
+
+app.get('/health', (req, res) => {
+  res.send('ok')
 })

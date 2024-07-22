@@ -38,7 +38,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1.0.4
         with:
           severity: info
-          text: Build successful
+          text: Successful build
           description: to https://redux-anecdotes-pipeline.fly.dev/ by ${{ github.actor }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Notify Failure
